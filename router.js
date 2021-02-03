@@ -1,8 +1,8 @@
+const express = require('express')
+const router = express.Router()
 
-module.exports = {
-    name: "tamin",
-    bad_habit: "musterbate",
-    musterbate: function(){
-        console.log("ohhh yeahhhhh")
-    }
-}
+router.get('/', function(req, res) {
+    res.render('home-guest')
+})
+
+module.exports = router
