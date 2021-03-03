@@ -2,6 +2,7 @@ const express = require('express')
 const { Cookie } = require('express-session')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
+const flash = require('connect-flash')
 const app = express()
 
 let sessionOptions = session({
@@ -14,6 +15,7 @@ let sessionOptions = session({
 })
 
 app.use(sessionOptions)
+app.use(flash())
 
 const router = require('./router')
 
@@ -28,4 +30,4 @@ app.use('/', router)
 
 module.exports = app
 
-//something
+// {"cookie":{"originalMaxAge":86400000,"expires":"2021-03-03T23:53:59.121Z","httpOnly":true,"path":"/"},"flash":{"errors":["Please try again later."]}}
