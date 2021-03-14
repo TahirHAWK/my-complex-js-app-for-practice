@@ -93,12 +93,12 @@ User.prototype.getAvatar = function() {
 
 User.findByUsername = function(username) {
   return new Promise(function(resolve, reject) {
-    if (typeof(username)!= "string") {
+    if (typeof(username) != "string") {
       reject()
       return
     }
     usersCollection.findOne({username: username}).then(function(userDoc) {
-      if(userDoc){
+      if (userDoc) {
         userDoc = new User(userDoc, true)
         userDoc = {
           _id: userDoc.data._id,
@@ -109,7 +109,7 @@ User.findByUsername = function(username) {
       } else {
         reject()
       }
-    }).catch(function(){
+    }).catch(function() {
       reject()
     })
   })
