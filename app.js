@@ -16,14 +16,13 @@ app.use(sessionOptions)
 app.use(flash())
 
 app.use(function(req, res, next) {
-  // make all error and success flash messeges available from all templates
+  // make all error and success flash messages available from all templates
   res.locals.errors = req.flash("errors")
-  res.locals.errors = req.flash("success")
-
-
+  res.locals.success = req.flash("success")
 
   // make current user id available on the req object
-  if(req.session.user){req.visitorId = req.session.user._id} else{req.visitorId = 0}
+  if (req.session.user) {req.visitorId = req.session.user._id} else {req.visitorId = 0}
+  
   // make user session data available from within view templates
   res.locals.user = req.session.user
   next()
