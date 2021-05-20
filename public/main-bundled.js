@@ -1,0 +1,1 @@
+(()=>{"use strict";new function e(){!function(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}(this,e),alert("Search alert has been successfully executed.")}})();
