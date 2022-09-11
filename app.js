@@ -5,6 +5,11 @@ const app = express()
 const router = require('./router')
 
 
+app.use(express.urlencoded({extended: false}))
+// Note: its a boilerplate code, no need to memorize. It's basically tells express to add the user submitted data to the request object.
+app.use(express.json())
+
+
 app.use(express.static('public'))
 // Note: declaring public folder where the css files and browser side javascript files will be stored.
 app.set('views', 'views')
